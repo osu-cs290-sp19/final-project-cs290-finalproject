@@ -5,7 +5,9 @@
  * email: hahnb@oregonstate.edu
  */
 
-var http = require("http");	//initiallize the server to require node.js http functions
+var http 	= require("http");	//initiallize the server to require node.js http functions
+var fs 		= require("fs");
+var html	= "";
 
 /* 
  * This function is called each time the server
@@ -18,12 +20,17 @@ function requestHandler(req, resp) {
 	console.log("Server received a request: ", req.method);
 	console.log("Path: ", req.url);
 
-	//send a request responce.
-	resp.statusCode = 200;
-	resp.setHeader('Content-Type', 'text/html');
-	resp.write('public/index.html');
+	fs.readFile("./public/index.html", function(err, html) {
+		if (err) {
+			throw err;
+		}
+		//send a request responce.
+		resp.writeHeader(200, {"Content-Type": "text/html"});
+		resp.write(html);
+		resp.end();
+	});
 
-	resp.end();
+	
 }
 
 
