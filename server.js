@@ -1,8 +1,8 @@
 /*
  * Server side JS controlling page redirect and request queries 
  *
- * name:  Bryce Hahn
- * email: hahnb@oregonstate.edu
+ * name:  Bryce Hahn, Michael Friesen
+ * email: hahnb@oregonstate.edu, friesemi@oregonstate.edu
  */
 
 var http 	= require("http");	//initiallize the server to require node.js http functions
@@ -41,3 +41,4 @@ function listenHandler() {
 // Node.js server setup.
 var server = http.createServer(requestHandler);
 server.listen(3000, listenHandler);	//open port 3000, if this port is used, try 3001, 3002, ect..
+console.log("Server is running on port: ", 3000); //3000 can be variable
