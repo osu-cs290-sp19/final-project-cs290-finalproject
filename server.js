@@ -6,10 +6,8 @@
  */
 
 var path = require("path");
-//var http = require("http");	//initiallize the server to require node.js http functions
 var express = require("express"); //using express to create/manipulate server requests
-//var fs      = require("fs");
-//var html    = "";
+var exhbs = require("express-handlebars");
 
 /* 
  * This function is called each time the server
@@ -36,21 +34,26 @@ var express = require("express"); //using express to create/manipulate server re
 var app  = express();
 var port = process.env.PORT || 3000;
 
+app.engine('handlebars', exhbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
 app.use(express.static('public'));
 
 app.get('/', function (req, res, next) {
-    console.log("This is serving the file");
-    res.status(200).sendFile(__dirname + '/public/index.html');
+    res.status(200).render('gamePage');
 });
+
+app.get('/customize', function (req, res, next) {
+    res.status(200).render('customizePage');
+})
+
+app.get('/rules', function (req, res, next) {
+    res.status(200).render('rulesPage');
+})
 
 app.get('*', function (req, res, next) {
-    console.log("Something done went wrong");
+    res.status(404).render('404Page');
 });
-
-
-function listenHandler() {
-
-}
 
 // Node.js server setup.
 //var server = http.createServer(requestHandler);

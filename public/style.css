@@ -1,0 +1,27 @@
+.navlist {
+    display: inline-flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.site-title {
+    margin: 0;
+}
+
+header {
+    background-color: lightgreen;
+    padding: 0;
+}
+.navlist li {
+    padding-left: 30px;
+    font-weight: bold;
+    max-width: 300px;
+}
+
+body {
+    margin: 0;
+}
+
+.navitem:hover {
+    color: blue;
+}

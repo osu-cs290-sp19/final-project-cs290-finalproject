@@ -1,0 +1,37 @@
+<!--The basic framework for any of the other pages generated-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>TITLE</title>
+
+    <!--We can add 3rd party scripts and such here-->
+    <link rel="stylesheet" href="style.css" media="screen" />
+
+    <!--handlebar script to gain access to features-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.runtime.js" charset="utf-8" defer></script>
+    <script src="/index.js" charset="utf-8" defer></script>
+    <!--Add scripts to include partials here-->
+
+</head>
+
+<body>
+    <header>
+        <h1 class="site-title">TITLE!</h1>
+    </header>
+    <header>
+        <nav class="navbar">
+            <ul class="navlist">
+                <li class="navitem" id="game"><a>Game</a></li>
+                <li class="navitem" id="rules"><a>Rules</a></li>
+                <li class="navitem" id="customize"><a>Customize</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <!--this is where the body of the other pages will go-->
+    {{{body}}}
+</body>
+
+</html>
