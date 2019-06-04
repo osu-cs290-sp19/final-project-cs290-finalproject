@@ -20,6 +20,7 @@ header {
 
 body {
     margin: 0;
+    font-family: 'Baskerville Old Face', Times, serif;
 }
 
 .navitem:hover {
