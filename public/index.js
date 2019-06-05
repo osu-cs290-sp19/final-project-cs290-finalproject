@@ -19,4 +19,7 @@ function handleNavItemClicked(event){
     else if (event.target.textContent == 'Customize')
         //res.status(200).render('customizePage');
         console.log('customize page gets loaded');
+
+    else if (event.target.textContent == 'Highscores')
+        console.log('highscores get loaded');
     }

@@ -6,6 +6,6 @@
     "\\views\\layouts",
     "\\views\\partials"
   ],
-  "SelectedNode": "\\public\\index.js",
+  "SelectedNode": "\\views\\layouts\\main.handlebars",
   "PreviewInSolutionExplorer": false
 }

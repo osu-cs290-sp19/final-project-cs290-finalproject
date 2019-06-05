@@ -10,19 +10,21 @@
         "express": "^4.17.1",
         "express-handlebars": "^3.1.0",
         "fs": "^1.2.1",
-        "handlebars": "^4.1.2"
+        "handlebars": "^4.1.2",
+        "mongodb": "^3.2.7"
     },
     "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "buildCustom": "handlebars views/customizePage.handlebars -f public/customTemplate.js",
-    "buildGame": "handlebars views/gamePage.handlebars -f public/gameTemplate.js",
-    "buildRules": "handlebars views/rulesPage.handlebars -f public/rulesTemplate.js",
-    "build404": "handlebars views/404Page.handlebars -f public/404Template.js",
-    "buildMain": "handlebars views/layouts/main.handlebars -f public/mainTemplate.js",
-    "prestart": "npm run buildCustom && npm run buildGame && npm run buildRules && npm run build404 && npm run buildMain",
-    "start": "node server.js"
-  },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "buildCustom": "handlebars views/customizePage.handlebars -f public/customTemplate.js",
+        "buildGame": "handlebars views/gamePage.handlebars -f public/gameTemplate.js",
+        "buildRules": "handlebars views/rulesPage.handlebars -f public/rulesTemplate.js",
+        "build404": "handlebars views/404Page.handlebars -f public/404Template.js",
+        "buildScores": "handlebars views/scoresPage.handlebars -f public/scoresTemplate.js",
+        "buildMain": "handlebars views/layouts/main.handlebars -f public/mainTemplate.js",
+        "prestart": "npm run buildCustom && npm run buildGame && npm run buildRules && npm run build404 && npm run buildScores && npm run buildMain",
+        "start": "node server.js"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/osu-cs290-sp19/final-project-cs290-finalproject"
