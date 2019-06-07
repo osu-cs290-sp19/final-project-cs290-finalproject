@@ -7,8 +7,8 @@ templates['scoresPage'] = template({"1":function(container,depth0,helpers,partia
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<script src=\"/score.js\" charset=\"utf-8\" defer></script>\r\n<link rel=\"stylesheet\" href=\"scorePage.css\" media=\"screen\" />\r\n\r\n<body>\r\n    <h2 class=\"scoreTitle\">Name: Score</h2>\r\n    <ol class=\"scoreList\">\r\n        <!--template to fill in name and score-->\r\n"
+  return "<script src=\"/score.js\" charset=\"utf-8\" defer></script>\r\n<link rel=\"stylesheet\" href=\"scorePage.css\" media=\"screen\" />\r\n\r\n<h2 class=\"scoreTitle\">Name: Score</h2>\r\n    <ol class=\"scoreList\">\r\n        <!--template to fill in name and score-->\r\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.scores : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "    </ol>\r\n</body>\r\n";
+    + "    </ol>";
 },"usePartial":true,"useData":true});
 })();
