@@ -1,0 +1,12 @@
+.scoreTitle {
+    margin-top: 0;
+}
+
+.deleteButton {
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    background-color: white;
+    border-style: dotted;
+    border-color: black;
+}

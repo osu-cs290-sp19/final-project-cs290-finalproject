@@ -16,13 +16,13 @@
     "devDependencies": {},
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "buildCustom": "handlebars views/customizePage.handlebars -f public/customTemplate.js",
+        "buildScore": "handlebars views/partials/newScore.handlebars -f public/newScoreTemplate.js",
         "buildGame": "handlebars views/gamePage.handlebars -f public/gameTemplate.js",
         "buildRules": "handlebars views/rulesPage.handlebars -f public/rulesTemplate.js",
         "build404": "handlebars views/404Page.handlebars -f public/404Template.js",
         "buildScores": "handlebars views/scoresPage.handlebars -f public/scoresTemplate.js",
         "buildMain": "handlebars views/layouts/main.handlebars -f public/mainTemplate.js",
-        "prestart": "npm run buildCustom && npm run buildGame && npm run buildRules && npm run build404 && npm run buildScores && npm run buildMain",
+        "prestart": "npm run buildScore && npm run buildGame && npm run buildRules && npm run build404 && npm run buildScores && npm run buildMain",
         "start": "node server.js"
     },
     "repository": {

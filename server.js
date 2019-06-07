@@ -53,6 +53,9 @@ app.set('view engine', 'handlebars');
 //Serve up all files in public
 app.use(express.static('public'));
 
+//temporary data served from scores.json
+var scoreData = require("./scores");
+
 //Defines the page that is rendered designated by the path
 app.get('/', function (req, res, next) {
     res.status(200).render('gamePage');
@@ -67,16 +70,14 @@ app.get('/rules', function (req, res, next) {
 });
 
 app.get('/scores', function (req, res, next) {
-    res.status(200).render('scoresPage');
+    res.status(200).render('scoresPage', { scores: scoreData });
 });
 
 app.get('*', function (req, res, next) {
     res.status(404).render('404Page');
 });
 
-// Node.js server setup.
-//var server = http.createServer(requestHandler);
-//server.listen(3000, listenHandler);	//open port 3000, if this port is used, try 3001, 3002, ect..
+// Node.js server setup
 app.listen(port, function () {
     console.log("Server is listening on port: ", port);
 });
@@ -86,7 +87,7 @@ app.listen(port, function () {
 //    if (err)
 //        throw err;
 //    db = client.db(mongoDBName);
-//    app.listen(port, function{
+//    app.listen(port, function(){
 //        console.log("Server is listening on port: ", port);
 //    });
 //});
