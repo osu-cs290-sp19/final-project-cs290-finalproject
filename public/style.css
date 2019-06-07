@@ -1,3 +1,4 @@
+
 .navlist {
     display: inline-flex;
     list-style-type: none;
@@ -9,7 +10,6 @@
 }
 
 header {
-    background-color: lightgreen;
     padding: 0;
 }
 .navlist li {
@@ -21,8 +21,18 @@ header {
 body {
     margin: 0;
     font-family: 'Baskerville Old Face', Times, serif;
+    background-color: lightgreen;
 }
 
 .navitem:hover {
     color: blue;
+}
+
+.playSpace {
+    display: inline-block;
+    position:absolute;
+    min-width: 1200px;
+    min-height: 400px;
+    right: 40px;
+    background-color: white;
 }

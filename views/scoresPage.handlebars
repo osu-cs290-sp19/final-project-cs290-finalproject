@@ -1,12 +1,10 @@
 <script src="/score.js" charset="utf-8" defer></script>
 <link rel="stylesheet" href="scorePage.css" media="screen" />
 
-<body>
-    <h2 class="scoreTitle">Name: Score</h2>
+<h2 class="scoreTitle">Name: Score</h2>
     <ol class="scoreList">
         <!--template to fill in name and score-->
         {{#each scores}}
         {{> newScore}}
         {{/each}}
     </ol>
-</body>
