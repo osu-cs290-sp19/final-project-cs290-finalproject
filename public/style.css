@@ -10,6 +10,7 @@
 }
 
 header {
+    background-color: #ef393a;
     padding: 0;
 }
 .navlist li {
@@ -28,11 +29,29 @@ body {
     color: blue;
 }
 
-.playSpace {
+.RuleBlock {
+    border-radius: 20px;
+    background-color: #ef393a;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     display: inline-block;
-    position:absolute;
-    min-width: 1200px;
-    min-height: 400px;
-    right: 40px;
-    background-color: white;
+    position: static;
+    max-width: 400px;
+    left: 50px;
+    top: 150px;
+
+}
+
+.RuleBlock h2 {
+    background-color: #f79798;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.RuleBlack h4 {
+    font-weight: bold;
 }
