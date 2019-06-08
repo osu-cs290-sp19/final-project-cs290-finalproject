@@ -22,8 +22,6 @@ var app  = express();
 var port = process.env.PORT || 3000;
 
 //This section creates the mongodb url to be used to access mongodb shell/database
-
-
 var mongoHost = process.env.HOST;
 var mongoPort = process.env.MONGO_PORT || 27017;
 var mongoUser = process.env.MONGO_USER;
@@ -68,16 +66,15 @@ app.get('*', function (req, res, next) {
 // Node.js server setup
 //app.listen(port, function () {
 //    console.log("Server is listening on port: ", port);
-//    console.log(mongoURL);
 //});
 
 //I'm leaving this commented out until database integration is ready
-MongoClient.connect(mongoURL, function (err, client) {
-    if (err)
+MongoClient.connect(mongoUrl, function (err, client) {
+    if (err) {
         throw err;
+    }
     db = client.db(mongoDBName);
-    app.listen(port, function(){
-        console.log("Server is listening on port: ", port);
+    app.listen(port, function () {
+        console.log("== Server listening on port", port);
     });
 });
-
