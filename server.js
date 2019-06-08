@@ -9,6 +9,7 @@ var path = require("path");
 var express = require("express"); //using express to create/manipulate server requests
 var exhbs = require("express-handlebars");
 var MongoClient = require("mongodb").MongoClient;
+var bodyParser = require("body-parser");
 
 /* 
  * This function is called each time the server
@@ -31,6 +32,8 @@ var mongoDBName = process.env.MONGO_DB_NAME;
 //The actual url is here
 var mongoURL = 'mongodb://${mongoUser}:${mongoPassword}@${mongoHost}:${mongoPort}/${mongoDBName}';
 var db = null;
+
+app.use(bodyParser.json());
 
 //Set handlebars as the mainview engine
 app.engine('handlebars', exhbs({ defaultLayout: 'main' }));
