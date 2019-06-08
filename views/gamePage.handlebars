@@ -1,23 +1,13 @@
+<script src="index.js" charset="utf-8" defer></script>
 <main>
     <h1 style="text-align: center; color: white">Lets Play Hearts!</h1>
     <div id="GameBoard">
-        <button id="dealBTN">Deal</button>
+        <button onclick="dealCardDeck()" id="dealBTN">Deal</button>
 
-        <div class="hand fan active-hand">
-            <img class='card' src='/cards/AS.svg'>
-            <img class='card' src='/cards/KS.svg'>
-            <img class='card' src='/cards/QS.svg'>
-            <img class='card' src='/cards/JS.svg'>
-            <img class='card' src='/cards/10S.svg'>
-            <img class='card' src='/cards/9H.svg'>
-            <img class='card' src='/cards/3H.svg'>
-            <img class='card' src='/cards/10D.svg'>
-            <img class='card' src='/cards/4D.svg'>
-            <img class='card' src='/cards/2D.svg'>
-            <img class='card' src='/cards/8C.svg'>
-            <img class='card' src='/cards/7C.svg'>
-            <img class='card' src='/cards/6C.svg'>
-        </div>
+        <div id="playerHand"    class="fan active-hand" data-fan='spacing: 0.2; width: 80; radius: 80; cards: AH, KH, QH, JH, QS'></div>
+        <div id="CPU_LEFT"      class="hand" data-hand="x: -50; cards: 2H, 3H, 4H, 5H, 6H"></div>
+        <div id="CPU_UP"        class="hand" data-hand="y: -50; cards: AC, 2C, 3C, 4C, 5C"></div>
+        <div id="CPU_RIGHT"     class="hand" data-hand="x:  50; cards: AD, 2D, 3D, 4D, 5D"></div>
     <div>
 </main>
 <footer>

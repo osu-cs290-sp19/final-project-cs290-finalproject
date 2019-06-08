@@ -5,11 +5,14 @@
  * email: hahnb@oregonstate.edu, friesemi@oregonstate.edu
  */
 
-var path = require("path");
-var express = require("express"); //using express to create/manipulate server requests
-var exhbs = require("express-handlebars");
+var path        = require("path");
+var express     = require("express"); //using express to create/manipulate server requests
+var exhbs       = require("express-handlebars");
 var MongoClient = require("mongodb").MongoClient;
-var bodyParser = require("body-parser");
+var bodyParser  = require("body-parser");
+//var cards       = require("./public/cards.js");
+//var cards       = require("cardsJS");
+var $           = require("jQuery");
 
 /*
  * This function is called each time the server

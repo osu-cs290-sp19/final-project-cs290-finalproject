@@ -10,17 +10,33 @@
 }
 
 .site-title {
+    position: relative;
+    left: 20px;
+    top: 6px;
     margin: 0;
+    color: #009FFF;
+    text-shadow:
+		-2px -2px 4px #0068A7,
+		2px -2px 4px #0068A7,
+		-2px 2px 4px #0068A7,
+		2px 2px 4px #0068A7;
 }
 
 header {
     background-color: #ef393a;   /* I want to replace this ugly color with a nice background card themed or something */
+    background-image: url("./cards/Red_Back.svg");
+    /*filter: blur(4px);        Dissabling blur although it looks cool, the way I am working the background image, this filter blurs all text too.
+        -webkit-filter: blur(4px) */
+    background-repeat: repeat;
     padding: 0;
 }
+
 .navlist li {
-    padding-left: 30px;
-    font-weight: bold;
-    max-width: 300px;
+    list-style-type: none;
+    margin: 2px;
+    padding: 4px;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 body {
@@ -35,11 +51,17 @@ body {
 
 .navitem a {
     background-color: #785120;
-    color: #60B41D;
+    font-weight: bold;
+    font-size: 32px;
+    color: #009FFF;
     text-decoration: none;
+    text-align: center;
     margin: 5px;
     padding: 5px;
     border-radius: 5px;
+    max-width: 20px;
+    min-width: 20px;
+    max-height: 10px;
 }
 
 .navitem a:hover {
@@ -54,6 +76,11 @@ body {
  *
 **/
 .RuleBlock {
+    text-align:center;
+}
+
+.RuleBlock {
+    margin: auto;
     border-radius: 20px;
     background-color: green;
     color: white;
@@ -62,9 +89,11 @@ body {
     margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
-    display: inline-block;
+    display: inline-table;
     position: static;
     max-width: 400px;
+    width: 300px;
+    height: 500px;
     left: 50px;
     top: 150px;
 

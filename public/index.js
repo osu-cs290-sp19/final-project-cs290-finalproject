@@ -12,16 +12,21 @@ deck.addCards(cards.all);
 deck.render({immediate:true});
 
 //Now lets create a couple of hands, one face down, one face up.
+
 upperhand = new cards.Hand({faceUp:false, y:60});
-lowerhand = new cards.Hand({faceUp:true, y:340});
+playerHand = new cards.Hand({faceUp:true, y:340});
 
 //Lets add a discard pile
 discardPile = new cards.Deck({faceUp:true});
 discardPile.x += 50;
 
+deck.render({callback:function() {
+	discardPile.addCard(deck.topCard());
+	discardPile.render();
+}});
 
 //Let's deal when the Deal button is pressed:
-$('#dealBTN').click(function() {
+function dealCardDeck() {
 	//Deck has a built in method to deal to hands.
 	$('#dealBTN').hide();
 	deck.deal(5, [upperhand, lowerhand], 50, function() {
@@ -29,27 +34,27 @@ $('#dealBTN').click(function() {
 		//is done.
 		discardPile.addCard(deck.topCard());
 		discardPile.render();
+		playerHand.render();
 	});
-});
-
+}
 
 //When you click on the top card of a deck, a card is added
 //to your hand
 deck.click(function(card){
 	if (card === deck.topCard()) {
-		lowerhand.addCard(deck.topCard());
-		lowerhand.render();
+		playerHand.addCard(deck.topCard());
+		playerHand.render();
 	}
 });
 
 //Finally, when you click a card in your hand, if it's
 //the same suit or rank as the top card of the discard pile
 //then it's added to it
-lowerhand.click(function(card){
+playerHand.click(function(card){
 	if (card.suit == discardPile.topCard().suit
 		|| card.rank == discardPile.topCard().rank) {
 		discardPile.addCard(card);
 		discardPile.render();
-		lowerhand.render();
+		playerHand.render();
 	}
 });
