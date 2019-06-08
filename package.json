@@ -1,38 +1,29 @@
 {
-    "name": "final-assignment",
-    "version": "1.0.0",
-    "description": "Node.js-based file server",
-    "main": "server.js",
-    "directories": {
-        "lib": "lib"
-    },
-    "dependencies": {
-        "body-parser": "^1.19.0",
-        "express": "^4.17.1",
-        "express-handlebars": "^3.1.0",
-        "handlebars": "^4.1.2",
-        "mongodb": "^3.2.7"
-    },
-    "devDependencies": {},
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "buildScore": "handlebars views/partials/newScore.handlebars -f public/newScoreTemplate.js",
-        "buildGame": "handlebars views/gamePage.handlebars -f public/gameTemplate.js",
-        "buildRules": "handlebars views/rulesPage.handlebars -f public/rulesTemplate.js",
-        "build404": "handlebars views/404Page.handlebars -f public/404Template.js",
-        "buildScores": "handlebars views/scoresPage.handlebars -f public/scoresTemplate.js",
-        "buildMain": "handlebars views/layouts/main.handlebars -f public/mainTemplate.js",
-        "prestart": "npm run buildScore && npm run buildGame && npm run buildRules && npm run build404 && npm run buildScores && npm run buildMain",
-        "start": "node server.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/osu-cs290-sp19/final-project-cs290-finalproject"
-    },
-    "author": "Bryce Hahn",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/osu-cs290-sp19/final-project-cs290-finalproject/issues"
-    },
-    "homepage": "https://github.com/osu-cs290-sp19/final-project-cs290-finalproject#readme"
+  "name": "Final",
+  "version": "1.0.0",
+  "description": "## What to expect: > I'm sorry, you expected an answer already? > - Bryce Hahn",
+  "main": "server.js",
+  "dependencies": {
+    "cardsJS": "^1.1.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.1.2",
+    "mongodb": "^3.2.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs290-sp19/final-project-cs290-finalproject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osu-cs290-sp19/final-project-cs290-finalproject/issues"
+  },
+  "homepage": "https://github.com/osu-cs290-sp19/final-project-cs290-finalproject#readme"
 }

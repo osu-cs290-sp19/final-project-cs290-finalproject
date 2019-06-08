@@ -1,4 +1,8 @@
-
+/**
+ *
+ *        Default CSS
+ *  -  Affects all pages  -
+**/
 .navlist {
     display: inline-flex;
     list-style-type: none;
@@ -10,7 +14,7 @@
 }
 
 header {
-    background-color: #ef393a;
+    background-color: #ef393a;   /* I want to replace this ugly color with a nice background card themed or something */
     padding: 0;
 }
 .navlist li {
@@ -22,16 +26,37 @@ header {
 body {
     margin: 0;
     font-family: 'Baskerville Old Face', Times, serif;
-    background-color: lightgreen;
+    background-color: #092E20;
 }
 
 .navitem:hover {
     color: blue;
 }
 
+.navitem a {
+    background-color: #785120;
+    color: #60B41D;
+    text-decoration: none;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.navitem a:hover {
+    background-color: #60B41D;
+    color: #785120;
+}
+
+
+/**
+ *
+ * RULES PAGE CSS
+ *
+**/
 .RuleBlock {
     border-radius: 20px;
-    background-color: #ef393a;
+    background-color: green;
+    color: white;
     padding: 20px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -46,12 +71,13 @@ body {
 }
 
 .RuleBlock h2 {
-    background-color: #f79798;
+    background-color: #785120;
     border-radius: 10px;
     padding: 5px;
     text-align: center;
 }
 
-.RuleBlack h4 {
+.RuleBlock h4 {
     font-weight: bold;
+    color: #60B41D;
 }

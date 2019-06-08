@@ -1,5 +1,5 @@
 /*
- * Server side JS controlling page redirect and request queries 
+ * Server side JS controlling page redirect and request queries
  *
  * name:  Bryce Hahn, Michael Friesen
  * email: hahnb@oregonstate.edu, friesemi@oregonstate.edu
@@ -11,7 +11,7 @@ var exhbs = require("express-handlebars");
 var MongoClient = require("mongodb").MongoClient;
 var bodyParser = require("body-parser");
 
-/* 
+/*
  * This function is called each time the server
  * running encounters a request package from a client.
  * The server will then identify which file was requested
@@ -67,17 +67,17 @@ app.get('*', function (req, res, next) {
 });
 
 // Node.js server setup
-//app.listen(port, function () {
-//    console.log("Server is listening on port: ", port);
-//});
+app.listen(port, function () {
+    console.log("Server is listening on port: ", port);
+});
 
 //I'm leaving this commented out until database integration is ready
-MongoClient.connect(mongoUrl, function (err, client) {
-    if (err) {
-        throw err;
-    }
-    db = client.db(mongoDBName);
-    app.listen(port, function () {
-        console.log("== Server listening on port", port);
-    });
-});
+//MongoClient.connect(mongoUrl, function (err, client) {
+//    if (err) {
+//        throw err;
+//    }
+//    db = client.db(mongoDBName);
+//    app.listen(port, function () {
+//        console.log("== Server listening on port", port);
+//    });
+//});
