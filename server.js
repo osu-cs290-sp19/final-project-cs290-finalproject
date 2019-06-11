@@ -12,7 +12,7 @@ var MongoClient = require("mongodb").MongoClient;
 var bodyParser  = require("body-parser");
 //var cards       = require("./public/cards.js");
 //var cards       = require("cardsJS");
-var $           = require("jQuery");
+//var $           = require("jQuery");
 
 /*
  * This function is called each time the server
@@ -51,10 +51,6 @@ var scoreData = require("./scores");
 //Defines the page that is rendered designated by the path
 app.get('/', function (req, res, next) {
     res.status(200).render('gamePage');
-});
-
-app.get('/customize', function (req, res, next) {
-    res.status(200).render('customizePage');
 });
 
 app.get('/rules', function (req, res, next) {

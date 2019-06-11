@@ -4,11 +4,9 @@
   "description": "## What to expect: > I'm sorry, you expected an answer already? > - Bryce Hahn",
   "main": "server.js",
   "dependencies": {
-    "cardsJS": "^1.1.1",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "handlebars": "^4.1.2",
-    "jquery": "^3.4.1",
     "mongodb": "^3.2.7"
   },
   "devDependencies": {
