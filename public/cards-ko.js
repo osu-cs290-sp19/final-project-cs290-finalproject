@@ -18,7 +18,7 @@
         module.exports = factory(require('jquery'), require('knockout'), require('cards'));
     } else {
         // Browser globals (root is window)
-        root.cards = factory(root.jQuery, root.ko, root.cards);
+        root.cards = factory(root.jquery, root.ko, root.cards);
     }
 }(this, function ($, ko, cards) {
     'use strict';

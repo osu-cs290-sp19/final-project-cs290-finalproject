@@ -20,7 +20,7 @@
         module.exports = factory(require('jquery'));
     } else {
         // Browser globals (root is window)
-        root.cards = factory(root.jQuery);
+        root.cards = factory(root.jquery);
     }
 }(this, function ($) {
     'use strict';
