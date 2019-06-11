@@ -70,17 +70,17 @@ app.get('*', function (req, res, next) {
 });
 
 // Node.js server setup
-app.listen(port, function () {
-    console.log("Server is listening on port: ", port);
-});
+//app.listen(port, function () {
+//    console.log("Server is listening on port: ", port);
+//});
 
 //I'm leaving this commented out until database integration is ready
-//MongoClient.connect(mongoUrl, function (err, client) {
-//    if (err) {
-//        throw err;
-//    }
-//    db = client.db(mongoDBName);
-//    app.listen(port, function () {
-//        console.log("== Server listening on port", port);
-//    });
-//});
+MongoClient.connect(mongoUrl, function (err, client) {
+    if (err) {
+        throw err;
+    }
+    db = client.db(mongoDBName);
+    app.listen(port, function () {
+        console.log("== Server listening on port", port);
+    });
+});

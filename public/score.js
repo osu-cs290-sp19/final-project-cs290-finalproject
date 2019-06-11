@@ -16,8 +16,9 @@ for (var i = 0; i < navItems.length; i++) {
 }
 
 
- function handleNavItemClicked(event) {
-//get name of tag and open corresponding page
+function handleNavItemClicked(event) {
+    //get name of tag and open corresponding page
     if (event.target.textContent == 'Game')
         //res.status(200).render('gamePage');
         console.log('game page gets loaded');
+}
