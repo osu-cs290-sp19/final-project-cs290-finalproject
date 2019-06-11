@@ -26,14 +26,14 @@ var app  = express();
 var port = process.env.PORT || 3000;
 
 //This section creates the mongodb url to be used to access mongodb shell/database
-var mongoHost = process.env.MMONGO_HOST;
+var mongoHost = process.env.MONGO_HOST;
 var mongoPort = process.env.MONGO_PORT || 27017;
 var mongoUser = process.env.MONGO_USER;
 var mongoPassword = process.env.MONGO_PASSWORD;
 var mongoDBName = process.env.MONGO_DB_NAME;
 
 //The actual url is here
-var mongoUrl = 'mongodb://${mongoUser}:${mongoPassword}@${mongoHost}:${mongoPort}/${mongoDBName}';
+var mongoUrl = `mongodb://${mongoUser}:${mongoPassword}@${mongoHost}:${mongoPort}/${mongoDBName}`;
 var db = null;
 
 app.use(bodyParser.json());
