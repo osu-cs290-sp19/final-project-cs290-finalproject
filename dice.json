@@ -1,0 +1,26 @@
+{
+  "one": {
+    "value": "1",
+    "image": "/public/dice/one.PNG"
+  },
+  "two": {
+    "value": "2",
+    "image": "/public/dice/two.PNG"
+  },
+  "three": {
+    "value": "3",
+    "image": "/public/dice/three.PNG"
+  },
+  "four": {
+    "value": "4",
+    "image": "/public/dice/four.PNG"
+  },
+  "five": {
+    "value": "5",
+    "image": "/public/dice/five.PNG"
+  },
+  "six": {
+    "value": "6",
+    "image": "/public/dice/six.PNG"
+  }
+}

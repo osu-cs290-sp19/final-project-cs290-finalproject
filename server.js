@@ -51,6 +51,14 @@ var scoreData = require("./scores");
 //Defines the page that is rendered designated by the path
 app.get('/', function (req, res, next) {
     res.status(200).render('gamePage');
+    var diceCollection = db.diceCollection('dice');
+    diceCollection.find({}).toArray(function (err, dice) {
+        if (err)
+            res.status(500).send({ error: "couldn't find the dice" });
+        else {
+            console.log(dice);
+        }
+    });
 });
 
 app.get('/rules', function (req, res, next) {
@@ -65,12 +73,7 @@ app.get('*', function (req, res, next) {
     res.status(404).render('404Page');
 });
 
-// Node.js server setup
-//app.listen(port, function () {
-//    console.log("Server is listening on port: ", port);
-//});
-
-//I'm leaving this commented out until database integration is ready
+//mongo connection is created and server is started here
 MongoClient.connect(mongoUrl, function (err, client) {
     if (err) {
         throw err;

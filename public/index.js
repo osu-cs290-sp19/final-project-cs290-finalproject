@@ -58,3 +58,9 @@ playerHand.click(function(card){
 		playerHand.render();
 	}
 });
+
+
+//Code for dice game
+function rollDice() {
+
+}
