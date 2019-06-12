@@ -109,27 +109,27 @@ function loadDice(diceCollection) {
             {
                 "name": "one",
                 "value": "0",
-                "image": "/public/dice/one.PNG"
+                "image": "/dice/one.PNG"
             },
             {
                 "name": "two",
                 "value": "1",
-                "image": "/public/dice/two.PNG"
+                "image": "/dice/two.PNG"
             },
             {
                 "name": "three",
                 "value": "2",
-                "image": "/public/dice/three.PNG"
+                "image": "/dice/three.PNG"
             },
             {
                 "name": "four",
                 "value": "3",
-                "image": "/public/dice/four.PNG"
+                "image": "/dice/four.PNG"
             },
             {
                 "name": "five",
                 "value": "4",
-                "image": "/public/dice/five.PNG"
+                "image": "/dice/five.PNG"
             },
             {
                 "name": "six",
