@@ -51,7 +51,7 @@ app.get('/', function (req, res, next) {
         if (err)
             res.status(500).send({ error: "couldn't find the dice" });
         else {
-            for (var i = 0; i < diceArr.length() ; i++) {
+            for (var i = 0; i < diceArr.length ; i++) {
                 console.log("==The dice are ", diceArr[i]);
             }
             //render 6 random dice
@@ -71,7 +71,7 @@ app.get('/scores', function (req, res, next) {
         if (err)
             res.status(500).send({ error: "couldn't retrieve the scores" });
         else {
-            for(var i = 0; i < scoreArr.length(); i++){
+            for(var i = 0; i < scoreArr.length; i++){
                 console.log("==Scores are: ", scoreArr[i]);
             }
             res.status(200).render('scoresPage', scoreArr);   //scores might need to be an object
