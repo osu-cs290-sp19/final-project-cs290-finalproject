@@ -74,7 +74,6 @@ app.get('/scores', function (req, res, next) {
             res.status(200).render('scoresPage', scores);   //scores might need to be an object
         }
     });
-    res.status(200).render('scoresPage', { scores: scoreData });
 });
 
 app.get('*', function (req, res, next) {
