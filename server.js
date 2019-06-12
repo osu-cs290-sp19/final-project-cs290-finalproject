@@ -60,9 +60,9 @@ app.get('/', function (req, res, next) {
             for (var i = 0; i < diceArr.length ; i++) {
                 randIdx = (Math.floor(Math.random() * 6));
                 console.log("==Random val is = ", randIdx);
-                rolledCollection.insertOne(diceCollection.find({ value: randIdx }));
-                console.log("==random dice is: ", rolledCollection[i]);
+                console.log("==Dice are: ", diceArr[i]);
             }
+
         }
     });
 });
