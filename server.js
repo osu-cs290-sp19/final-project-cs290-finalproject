@@ -46,11 +46,14 @@ app.use(express.static('public'));
 app.get('/', function (req, res, next) {
     res.status(200).render('gamePage');
     var diceCollection = db.collection('dice');
-    var diceArray = diceCollection.find({}).toArray(function (err, dice) {
+    var diceArray = diceCollection.find({});
+    diceArray.toArray(function (err, diceArr) {
         if (err)
             res.status(500).send({ error: "couldn't find the dice" });
         else {
-            console.log("==The dice are ", dice);
+            for (var i = 0; i < diceArr.length() ; i++) {
+                console.log("==The dice are ", diceArr[i]);
+            }
             //render 6 random dice
         }
     });
@@ -63,12 +66,15 @@ app.get('/rules', function (req, res, next) {
 //makes a collection of the scores and generates score page based on scores
 app.get('/scores', function (req, res, next) {
     var scoreCollection = db.collection('scores');
-    var scoreArray = scoreCollection.find({}).toArray(function (err, scores) {
+    var scoreArray = scoreCollection.find({});
+    scoreArray.toArray(function (err, scoreArr) {
         if (err)
             res.status(500).send({ error: "couldn't retrieve the scores" });
         else {
-            console.log("==Scores are: ", scores[1]);
-            res.status(200).render('scoresPage', scores);   //scores might need to be an object
+            for(var i = 0; i < scoreArr.length(); i++){
+                console.log("==Scores are: ", scoreArr[i]);
+            }
+            res.status(200).render('scoresPage', scoreArr);   //scores might need to be an object
         }
     });
 });

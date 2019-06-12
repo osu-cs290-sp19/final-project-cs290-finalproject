@@ -5,11 +5,9 @@
 <h2 class="scoreTitle">Top Scores</h2>
     <ol class="scoreList">
         <!--template to fill in name and score-->
-        {{#fromDB}}
             {{#each scores}}
             {{> newScore}}
             {{/each}}
-        {{/fromDB}}
     </ol>
     <p style="text-align: center;">-- Lower is better --</p>
 </div>
