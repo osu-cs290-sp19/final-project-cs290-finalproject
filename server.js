@@ -46,7 +46,7 @@ app.use(express.static('public'));
 app.get('/', function (req, res, next) {
     res.status(200).render('gamePage');
     var diceCollection = db.collection('dice');
-    diceCollection.find({}).toArray(function (err, dice) {
+    var diceArray = diceCollection.find({}).toArray(function (err, dice) {
         if (err)
             res.status(500).send({ error: "couldn't find the dice" });
         else {
@@ -67,8 +67,8 @@ app.get('/scores', function (req, res, next) {
         if (err)
             res.status(500).send({ error: "couldn't retrieve the scores" });
         else {
-            console.log("==Scores are: ", scores);
-            res.status(200).render('scoresPage', { scores: scores });   //scores might need to be an object
+            console.log("==Scores are: ", scores[1]);
+            res.status(200).render('scoresPage', scores);   //scores might need to be an object
         }
     });
 });
