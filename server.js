@@ -107,34 +107,28 @@ function loadDice(diceCollection) {
     //value is set to value-1 for index
     diceCollection.insertMany([
             {
-                "name": "one",
-                "value": "0",
-                "image": "/dice/one.PNG"
-            },
-            {
-                "name": "two",
                 "value": "1",
-                "image": "/dice/two.PNG"
+                "image": "dice/one.PNG"
             },
             {
-                "name": "three",
                 "value": "2",
-                "image": "/dice/three.PNG"
+                "image": "dice/two.PNG"
             },
             {
-                "name": "four",
                 "value": "3",
-                "image": "/dice/four.PNG"
+                "image": "dice/three.PNG"
             },
             {
-                "name": "five",
                 "value": "4",
-                "image": "/dice/five.PNG"
+                "image": "dice/four.PNG"
             },
             {
-                "name": "six",
                 "value": "5",
-                "image": "/public/dice/six.PNG"
+                "image": "dice/five.PNG"
+            },
+            {
+                "value": "6",
+                "image": "public/dice/six.PNG"
             }
     ]);
 }
