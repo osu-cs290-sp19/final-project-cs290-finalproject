@@ -47,6 +47,7 @@ app.get('/', function (req, res, next) {
     var randIdx = 0;
     var renderedDie = [];
     var diceCollection = db.collection('dice');
+    console.log(diceCollection.length);
     if (diceCollection.length > 6)
         diceCollection.remove();
     loadDice(diceCollection);
