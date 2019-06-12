@@ -53,8 +53,9 @@ app.get('/', function (req, res, next) {
         if (err)
             res.status(500).send({ error: "couldn't find the dice" });
         else {
+            console.log("==number of times this ran: ");
             for (var i = 0; i < diceArr.length ; i++) {
-                randIdx[i] = (Math.random() * 6);
+                randIdx[i] = (Math.floor(Math.random() * 6));
                 console.log("==The dice are ", diceArr[i]);
                 console.log("==Random val is = ", randIdx[i]);
             }
