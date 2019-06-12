@@ -45,21 +45,20 @@ app.use(express.static('public'));
 //Defines the page that is rendered designated by the path
 app.get('/', function (req, res, next) {
     var randIdx = 0;
-    var idxCheck = {};
-    res.status(200).render('gamePage');
+    var renderedDie = [];
     var diceCollection = db.collection('dice');
-    var rolledCollection = db.collection('rolled');
     loadDice(diceCollection);
-    var diceArray = diceCollection.find();
-    diceArray.toArray(function (err, diceArr) {
+    var diceArray = diceCollection.find().toArray(function (err, diceArr) {
         if (err)
             res.status(500).send({ error: "couldn't find the dice" });
         else {
-            for (var i = 0; i < diceArr.length ; i++) {
+            for (var i = 0; i < 6 ; i++) {
                 randIdx = (Math.floor(Math.random() * 6));
                 console.log("==Random val is = ", randIdx);
-                renderDice(diceArr[randIdx]);
+                renderedDie += diceArr[randIdx];
             }
+            //just renders the page with predefined dice
+            res.status(200).render('gamePage', {renDice: renderedDice});
         }
     });
 });
@@ -82,14 +81,26 @@ app.get('/scores', function (req, res, next) {
     });
 });
 
+//adds the final score
+app.post('/scores/addScore', function (req, res, next) {
+    if (req.body && req.body.name) {
+        var scoreCollection = db.collection('scores');
+        var finalScore = {
+            name: "21",
+            score: req.body.score
+        };
+        scoreCollection.insertOne({
+            $push: {scores: finalScore}
+        });
+        console.log("==Added score is: ", finalScore);
+    }
+    else
+        next();
+});
+
 app.get('*', function (req, res, next) {
     res.status(404).render('404Page');
 });
-
-//function to render the dice
-function renderDice(die) {
-    console.log("==This is the die to render: ", die);
-}
 
 //this will manually load the dice into the collection
 function loadDice(diceCollection) {
