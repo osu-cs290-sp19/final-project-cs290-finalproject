@@ -54,10 +54,10 @@ app.get('/', function (req, res, next) {
         if (err)
             res.status(500).send({ error: "Couldn't find the dice" });
         else {
-            for (var i = 0; i < 6 ; i++) {
+            for (var i = 0; i < diceArr.length ; i++) {
                 randIdx = (Math.floor(Math.random() * 6));
-                console.log("==Random val is = ", randIdx);
                 renderedDie.push(diceArr[randIdx]);
+                console.log(diceArr[i]);
             }
             console.log("==Here are the dice to be rendered: ", renderedDie);
             res.status(200).render('gamePage', {renDice: renderedDie});
