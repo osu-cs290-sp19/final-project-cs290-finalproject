@@ -47,7 +47,7 @@ app.get('/', function (req, res, next) {
     var randIdx = [];
     res.status(200).render('gamePage');
     var diceCollection = db.collection('dice');
-    diceCollection.drop();
+    var rolledCollection = db.collection('rolled');
     if(diceCollection.length <= 0)
         loadDice(diceCollection);
     var diceArray = diceCollection.find();
@@ -55,14 +55,13 @@ app.get('/', function (req, res, next) {
         if (err)
             res.status(500).send({ error: "couldn't find the dice" });
         else {
-            console.log("==number of times this ran: ");
             for (var i = 0; i < diceArr.length ; i++) {
                 randIdx[i] = (Math.floor(Math.random() * 6));
                 console.log("==Random val is = ", randIdx[i]);
-            }
-            console.log("==The dice are ", diceArr);
 
-            //render 6 random dice
+                rolledCollection.insertOne(diceCollection[randIdx]);
+                console.log("==new dice is: ", rolledCollection[i]);
+            }
         }
     });
 });
@@ -79,8 +78,7 @@ app.get('/scores', function (req, res, next) {
         if (err)
             res.status(500).send({ error: "couldn't retrieve the scores" });
         else {
-
-            res.status(200).render('scoresPage', { scores: scoreArr });   //scores might need to be an object
+            res.status(200).render('scoresPage', { scores: scoreArr });
         }
     });
 });
@@ -91,30 +89,31 @@ app.get('*', function (req, res, next) {
 
 //this will manually load the dice into the collection
 function loadDice(diceCollection) {
+    //value is set to value-1 for index
     diceCollection.insertMany([
         {
             "one": {
-                "value": "1",
+                "value": "0",
                 "image": "/public/dice/one.PNG"
             },
             "two": {
-                "value": "2",
+                "value": "1",
                 "image": "/public/dice/two.PNG"
             },
             "three": {
-                "value": "3",
+                "value": "2",
                 "image": "/public/dice/three.PNG"
             },
             "four": {
-                "value": "4",
+                "value": "3",
                 "image": "/public/dice/four.PNG"
             },
             "five": {
-                "value": "5",
+                "value": "4",
                 "image": "/public/dice/five.PNG"
             },
             "six": {
-                "value": "6",
+                "value": "5",
                 "image": "/public/dice/six.PNG"
             }
         }

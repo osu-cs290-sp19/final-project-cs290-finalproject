@@ -7,7 +7,7 @@
     border: 10px;
 }
 
-.deleteButton {
+#deleteButton {
     padding: 0;
     position: absolute;
     right: 50px;
@@ -16,7 +16,7 @@
     border-radius: 15px;
 }
 
-.deleteButton:hover {
+#deleteButton:hover {
     cursor: pointer;
     background-color: red;
 }

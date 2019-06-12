@@ -61,6 +61,26 @@
 
 
 //Code for dice game
-function rollDice() {
+window.addEventListener('DOMContentLoaded', function () {
+    //if the roll button is clicked this adds the dice
+    var rollButton = document.getElementById('rollBTN');
+    if (rollButton) {
+        rollButton.addEventListener('click', handleDiceRoll());
+    }
 
+    //this will delete scores
+    var deleteScore = document.getElementById('deleteButton');
+    if (deleteScore) {
+        deleteScore.addEventListener('click', handleDelete());
+    }
+});
+
+//this rolls and renders the dice
+function handleDiceRoll() {
+
+}
+
+//this function deletes the desired score
+function handleDelete() {
+    console.log("Delete this score");
 }
