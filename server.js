@@ -66,6 +66,16 @@ app.get('/rules', function (req, res, next) {
 //makes a collection of the scores and generates score page based on scores
 app.get('/scores', function (req, res, next) {
     var scoreCollection = db.collection('scores');
+    scoreCollection.insertMany([
+        {
+            name: "mic",
+            score: "21"
+        },
+        {
+            name: "brad",
+            score: "123"
+        }
+    ]);
     var scoreArray = scoreCollection.find();
     scoreArray.toArray(function (err, scoreArr) {
         if (err)
