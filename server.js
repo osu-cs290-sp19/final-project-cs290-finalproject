@@ -47,11 +47,11 @@ app.get('/', function (req, res, next) {
     var randIdx = 0;
     var renderedDie = [];
     var diceCollection = db.collection('dice');
-    console.log(diceCollection.length);
+    var diceArray = diceCollection.find();
     if (diceCollection.length > 6)
         diceCollection.remove();
     loadDice(diceCollection);
-    var diceArray = diceCollection.find().toArray(function (err, diceArr) {
+    diceArray = diceCollection.find().toArray(function (err, diceArr) {
         if (err)
             res.status(500).send({ error: "Couldn't find the dice" });
         else {
