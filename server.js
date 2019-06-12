@@ -63,7 +63,7 @@ app.get('/rules', function (req, res, next) {
 //makes a collection of the scores and generates score page based on scores
 app.get('/scores', function (req, res, next) {
     var scoreCollection = db.collection('scores');
-    var scoreArray = db.scoreCollection.find({}).toArray(function (err, scores) {
+    var scoreArray = scoreCollection.find({}).toArray(function (err, scores) {
         if (err)
             res.status(500).send({ error: "couldn't retrieve the scores" });
         else {
