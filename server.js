@@ -47,8 +47,8 @@ app.get('/', function (req, res, next) {
     var randIdx = 0;
     var renderedDie = [];
     var diceCollection = db.collection('dice');
+    diceCollection.drop();
     var diceArray = diceCollection.find();
-    diceArray.drop();
     loadDice(diceCollection);
     diceArray = diceCollection.find().toArray(function (err, diceArr) {
         if (err)
