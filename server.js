@@ -108,11 +108,11 @@ function loadDice(diceCollection) {
     diceCollection.insertMany([
             {
                 "value": "1",
-                "image": "dice/one.PNG"
+                "image": "https://imgur.com/dNYSOcQ"
             },
             {
                 "value": "2",
-                "image": "dice/two.PNG"
+                "image": "https://imgur.com/a/OhF2s6K"
             },
             {
                 "value": "3",
