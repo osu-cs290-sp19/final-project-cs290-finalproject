@@ -10,9 +10,6 @@ var express     = require("express"); //using express to create/manipulate serve
 var exhbs       = require("express-handlebars");
 var MongoClient = require("mongodb").MongoClient;
 var bodyParser  = require("body-parser");
-//var cards       = require("./public/cards.js");
-//var cards       = require("cardsJS");
-//var $           = require("jQuery");
 
 /*
  * This function is called each time the server
@@ -53,7 +50,7 @@ app.get('/', function (req, res, next) {
         if (err)
             res.status(500).send({ error: "couldn't find the dice" });
         else {
-            console.log(dice);
+            console.log("==The dice are ", dice);
             //render 6 random dice
         }
     });
@@ -66,18 +63,7 @@ app.get('/rules', function (req, res, next) {
 //makes a collection of the scores and generates score page based on scores
 app.get('/scores', function (req, res, next) {
     var scoreCollection = db.collection('scores');
-    //test
-    db.scoreCollection.insertMany([
-    {
-        name: "bry",
-        score: "2"
-    },
-    {
-        name: "mic",
-        score: "12"
-    }
-    ]);
-    scoreCollection.find().toArray(function (err, scores) {
+    var scoreArray = db.scoreCollection.find({}).toArray(function (err, scores) {
         if (err)
             res.status(500).send({ error: "couldn't retrieve the scores" });
         else {
