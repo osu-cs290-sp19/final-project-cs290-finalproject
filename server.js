@@ -66,25 +66,23 @@ app.get('/rules', function (req, res, next) {
 //makes a collection of the scores and generates score page based on scores
 app.get('/scores', function (req, res, next) {
     var scoreCollection = db.collection('scores');
-    scoreCollection.insertMany([
-        {
-            name: "mic",
-            score: "21"
-        },
-        {
-            name: "brad",
-            score: "123"
-        }
-    ]);
+    //scoreCollection.insertMany([
+    //    {
+    //        name: "mic",
+    //        score: "21"
+    //    },
+    //    {
+    //        name: "brad",
+    //        score: "123"
+    //    }
+    //]);
     var scoreArray = scoreCollection.find();
     scoreArray.toArray(function (err, scoreArr) {
         if (err)
             res.status(500).send({ error: "couldn't retrieve the scores" });
         else {
-            for(var i = 0; i < scoreArr.length; i++){
-                console.log("==Scores are: ", scoreArr[i]);
-            }
-            res.status(200).render('scoresPage', scoreArr[0]);   //scores might need to be an object
+
+            res.status(200).render('scoresPage', { scores: scoreArr });   //scores might need to be an object
         }
     });
 });

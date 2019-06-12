@@ -5,14 +5,9 @@
 <h2 class="scoreTitle">Top Scores</h2>
     <ol class="scoreList">
         <!--template to fill in name and score-->
-        <li>
-            <div class="score">
-                <h2 class="scoreName">
-                    {{name}}: {{score}}
-                    <button class="deleteButton">DELETE</button>
-                </h2>
-            </div>
-        </li>
+        {{#each scores}}
+            {{> newScore}}
+        {{/each}}
     </ol>
     <p style="text-align: center;">-- Lower is better --</p>
 </div>
