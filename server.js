@@ -46,6 +46,7 @@ app.use(express.static('public'));
 app.get('/', function (req, res, next) {
     res.status(200).render('gamePage');
     var diceCollection = db.collection('dice');
+    loadDice(diceCollection);
     var diceArray = diceCollection.find();
     diceArray.toArray(function (err, diceArr) {
         if (err)
@@ -53,6 +54,7 @@ app.get('/', function (req, res, next) {
         else {
             for (var i = 0; i < diceArr.length ; i++) {
                 console.log("==The dice are ", diceArr[i]);
+                res.status(200).render('dieImg', { die: diceArr[i].image });
             }
             //render 6 random dice
         }
@@ -66,16 +68,6 @@ app.get('/rules', function (req, res, next) {
 //makes a collection of the scores and generates score page based on scores
 app.get('/scores', function (req, res, next) {
     var scoreCollection = db.collection('scores');
-    //scoreCollection.insertMany([
-    //    {
-    //        name: "mic",
-    //        score: "21"
-    //    },
-    //    {
-    //        name: "brad",
-    //        score: "123"
-    //    }
-    //]);
     var scoreArray = scoreCollection.find();
     scoreArray.toArray(function (err, scoreArr) {
         if (err)
@@ -90,6 +82,38 @@ app.get('/scores', function (req, res, next) {
 app.get('*', function (req, res, next) {
     res.status(404).render('404Page');
 });
+
+//this will manually load the dice into the collection
+function loadDice(diceCollection) {
+    diceCollection.insertMany([
+        {
+            "one": {
+                "value": "1",
+                "image": "/public/dice/one.PNG"
+            },
+            "two": {
+                "value": "2",
+                "image": "/public/dice/two.PNG"
+            },
+            "three": {
+                "value": "3",
+                "image": "/public/dice/three.PNG"
+            },
+            "four": {
+                "value": "4",
+                "image": "/public/dice/four.PNG"
+            },
+            "five": {
+                "value": "5",
+                "image": "/public/dice/five.PNG"
+            },
+            "six": {
+                "value": "6",
+                "image": "/public/dice/six.PNG"
+            }
+        }
+    ]);
+}
 
 //mongo connection is created and server is started here
 MongoClient.connect(mongoUrl, function (err, client) {

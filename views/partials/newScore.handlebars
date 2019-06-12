@@ -2,7 +2,14 @@
     <div class="score">
         <h2 class="scoreName">
             {{name}}: {{score}}
-            <button class="deleteButton">DELETE</button>
+            <button class="deleteButton" onclick="deleteScore()">DELETE</button>
         </h2>
     </div>
 </li>
+
+<script>
+    function deleteScore() {
+        //send some kind of request to access db
+        console.log("Delete this score");
+    }
+</script>
