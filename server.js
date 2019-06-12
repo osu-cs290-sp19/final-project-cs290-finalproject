@@ -23,7 +23,7 @@ var bodyParser  = require("body-parser");
  */
 
 var app  = express();
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3090;
 
 //This section creates the mongodb url to be used to access mongodb shell/database
 var mongoHost = process.env.MONGO_HOST;
@@ -51,8 +51,8 @@ var scoreData = require("./scores");
 //Defines the page that is rendered designated by the path
 app.get('/', function (req, res, next) {
     res.status(200).render('gamePage');
-    var diceCollection = db.diceCollection('dice');
-    diceCollection.find({}).toArray(function (err, dice) {
+    var collection = db.collection('dice');
+    collection.find({}).toArray(function (err, dice) {
         if (err)
             res.status(500).send({ error: "couldn't find the dice" });
         else {
