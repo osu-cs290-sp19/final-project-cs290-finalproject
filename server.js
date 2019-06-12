@@ -58,12 +58,13 @@ app.get('/', function (req, res, next) {
             for (var i = 0; i < diceArr.length ; i++) {
                 randIdx = (Math.floor(Math.random() * 6));
                 console.log("==Random val is = ", randIdx);
-                console.log("==Dice are: ", diceArr[i]);
+                renderDice(diceArr[randIdx]);
             }
         }
     });
 });
 
+//render rules page
 app.get('/rules', function (req, res, next) {
     res.status(200).render('rulesPage');
 });
@@ -84,6 +85,11 @@ app.get('/scores', function (req, res, next) {
 app.get('*', function (req, res, next) {
     res.status(404).render('404Page');
 });
+
+//function to render the dice
+function renderDice(die) {
+    console.log("==This is the die to render: ", die);
+}
 
 //this will manually load the dice into the collection
 function loadDice(diceCollection) {
