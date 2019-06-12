@@ -51,10 +51,10 @@ app.get('/', function (req, res, next) {
     var rolledCollection = db.collection('rolled');
 
     var diceArray = diceCollection.find();
-    if (diceCollection.length === 0) {
+    if (diceArray.length == 0) {
         loadDice(diceCollection);
     }
-    diceArray.find().toArray(function (err, diceArr) {
+    diceArray = diceCollection.find().toArray(function (err, diceArr) {
         if (err)
             res.status(500).send({ error: "couldn't find the dice" });
         else {
