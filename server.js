@@ -47,7 +47,9 @@ app.get('/', function (req, res, next) {
     var randIdx = [];
     res.status(200).render('gamePage');
     var diceCollection = db.collection('dice');
-    loadDice(diceCollection);
+    diceCollection.drop();
+    if(dice.length <= 0)
+        loadDice(diceCollection);
     var diceArray = diceCollection.find();
     diceArray.toArray(function (err, diceArr) {
         if (err)
@@ -56,9 +58,10 @@ app.get('/', function (req, res, next) {
             console.log("==number of times this ran: ");
             for (var i = 0; i < diceArr.length ; i++) {
                 randIdx[i] = (Math.floor(Math.random() * 6));
-                console.log("==The dice are ", diceArr[i]);
                 console.log("==Random val is = ", randIdx[i]);
             }
+            console.log("==The dice are ", diceArr);
+
             //render 6 random dice
         }
     });
