@@ -48,7 +48,7 @@ app.get('/', function (req, res, next) {
     res.status(200).render('gamePage');
     var diceCollection = db.collection('dice');
     diceCollection.drop();
-    if(dice.length <= 0)
+    if(diceCollection.length <= 0)
         loadDice(diceCollection);
     var diceArray = diceCollection.find();
     diceArray.toArray(function (err, diceArr) {
