@@ -47,20 +47,20 @@ app.get('/', function (req, res, next) {
     var randIdx = [];
     res.status(200).render('gamePage');
     var diceCollection = db.collection('dice');
-    var rolledCollection = db.collection('rolled');
+    //var rolledCollection = db.collection('rolled');
     if(diceCollection.length == 0)
         loadDice(diceCollection);
     var diceArray = diceCollection.find();
-    diceArray.toArray(function (err, diceArr) {
+    diceArray.toArray(function (err, diceArray) {
         if (err)
             res.status(500).send({ error: "couldn't find the dice" });
         else {
-            for (var i = 0; i < diceArr.length ; i++) {
+            for (var i = 0; i < diceArray.length ; i++) {
                 randIdx[i] = (Math.floor(Math.random() * 6));
                 console.log("==Random val is = ", randIdx[i]);
 
-                rolledCollection.insertOne(diceCollection[randIdx]);
-                console.log("==new dice is: ", rolledCollection[i]);
+                //rolledCollection.insertOne(diceCollection[randIdx]);
+                //console.log("==new dice is: ", rolledCollection[i]);
             }
         }
     });
