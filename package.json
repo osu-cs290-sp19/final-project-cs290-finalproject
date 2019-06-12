@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "handlebars views/404Page.handlebars views/gamePage.handlebars views/rulesPage.handlebars views/scoresPage.handlebars views/settingsPage.handlebars views/layouts/main.handlebars views/partials/newScore.handlebars -f public/mainTemplate.js",
+    "build": "handlebars views/404Page.handlebars views/gamePage.handlebars views/rulesPage.handlebars views/scoresPage.handlebars views/settingsPage.handlebars views/layouts/main.handlebars views/partials/newScore.handlebars views/partials/dieImg.handlebars -f public/mainTemplate.js",
     "start": "node server.js",
     "dev": "nodemon server.js",
     "prestart": "npm run build",
