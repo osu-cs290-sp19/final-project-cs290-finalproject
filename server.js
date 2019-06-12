@@ -48,14 +48,13 @@ app.get('/', function (req, res, next) {
     res.status(200).render('gamePage');
     var diceCollection = db.collection('dice');
     //var rolledCollection = db.collection('rolled');
-    if(diceCollection.length == 0)
+    //if(diceCollection.length == 0)
         loadDice(diceCollection);
     var diceArray = diceCollection.find();
     diceArray.toArray(function (err, diceArray) {
         if (err)
             res.status(500).send({ error: "couldn't find the dice" });
         else {
-            console.log(diceArray.length);
             for (var i = 0; i < diceArray.length ; i++) {
                 randIdx[i] = (Math.floor(Math.random() * 6));
                 console.log("==Random val is = ", randIdx[i]);
