@@ -44,6 +44,7 @@ app.use(express.static('public'));
 
 //Defines the page that is rendered designated by the path
 app.get('/', function (req, res, next) {
+    var randIdx = [];
     res.status(200).render('gamePage');
     var diceCollection = db.collection('dice');
     loadDice(diceCollection);
@@ -53,8 +54,9 @@ app.get('/', function (req, res, next) {
             res.status(500).send({ error: "couldn't find the dice" });
         else {
             for (var i = 0; i < diceArr.length ; i++) {
+                randIdx[i] = (Math.random() * 6);
                 console.log("==The dice are ", diceArr[i]);
-                res.status(200).render('/views/partials/dieImg', { die: diceArr[i].image });
+                console.log("==Random val is = ", randIdx[i]);
             }
             //render 6 random dice
         }
