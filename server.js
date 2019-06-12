@@ -88,7 +88,7 @@ app.get('*', function (req, res, next) {
 //this will manually load the dice into the collection
 function loadDice(diceCollection) {
     //value is set to value-1 for index
-    diceCollection.insertMany(
+    diceCollection.insertMany([
             {
                 "name": "one",
                 "value": "0",
@@ -118,7 +118,8 @@ function loadDice(diceCollection) {
                 "name": "six",
                 "value": "5",
                 "image": "/public/dice/six.PNG"
-            });
+            }
+    ]);
 }
 
 //mongo connection is created and server is started here
