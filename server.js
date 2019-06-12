@@ -84,7 +84,7 @@ app.get('/scores', function (req, res, next) {
             for(var i = 0; i < scoreArr.length; i++){
                 console.log("==Scores are: ", scoreArr[i]);
             }
-            res.status(200).render('scoresPage', scoreArr);   //scores might need to be an object
+            res.status(200).render('scoresPage', scoreArr[0]);   //scores might need to be an object
         }
     });
 });
