@@ -70,8 +70,8 @@ app.get('/scores', function (req, res, next) {
         if (err)
             res.status(500).send({ error: "couldn't retrieve the scores" });
         else {
-            console.log(scores);
-            res.status(200).render('scoresPage', scores);   //scores might need to be an object
+            console.log("==Scores are: ", scores);
+            res.status(200).render('scoresPage', { scores: scores });   //scores might need to be an object
         }
     });
 });
