@@ -49,6 +49,7 @@ app.get('/', function (req, res, next) {
     res.status(200).render('gamePage');
     var diceCollection = db.collection('dice');
     var rolledCollection = db.collection('rolled');
+    diceCollection.drop();
     if (diceCollection.length == 0) {
         loadDice(diceCollection);
     }
@@ -62,7 +63,6 @@ app.get('/', function (req, res, next) {
                 console.log("==Random val is = ", randIdx);
                 console.log("==Dice are: ", diceArr[i]);
             }
-
         }
     });
 });
@@ -91,32 +91,37 @@ app.get('*', function (req, res, next) {
 //this will manually load the dice into the collection
 function loadDice(diceCollection) {
     //value is set to value-1 for index
-    diceCollection.insertMany({
-            "one": {
+    diceCollection.insertMany(
+            {
+                "name": "one",
                 "value": "0",
                 "image": "/public/dice/one.PNG"
             },
-            "two": {
+            {
+                "name": "two",
                 "value": "1",
                 "image": "/public/dice/two.PNG"
             },
-            "three": {
+            {
+                "name": "three",
                 "value": "2",
                 "image": "/public/dice/three.PNG"
             },
-            "four": {
+            {
+                "name": "four",
                 "value": "3",
                 "image": "/public/dice/four.PNG"
             },
-            "five": {
+            {
+                "name": "five",
                 "value": "4",
                 "image": "/public/dice/five.PNG"
             },
-            "six": {
+            {
+                "name": "six",
                 "value": "5",
                 "image": "/public/dice/six.PNG"
-            }
-        });
+            });
 }
 
 //mongo connection is created and server is started here
