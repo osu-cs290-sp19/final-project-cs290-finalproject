@@ -54,7 +54,7 @@ app.get('/', function (req, res, next) {
         else {
             for (var i = 0; i < diceArr.length ; i++) {
                 console.log("==The dice are ", diceArr[i]);
-                res.status(200).render('dieImg', { die: diceArr[i].image });
+                res.status(200).render('/views/partials/dieImg', { die: diceArr[i].image });
             }
             //render 6 random dice
         }
