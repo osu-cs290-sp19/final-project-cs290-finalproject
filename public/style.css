@@ -112,7 +112,7 @@ body {
 }
 
 
-#modal-backdrop {
+/*#modal-backdrop {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -225,4 +225,4 @@ body {
 
     #modal-cancel:hover {
         background-color: #eee;
-    }
+    }*/
