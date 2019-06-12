@@ -50,7 +50,7 @@ app.get('/', function (req, res, next) {
     loadDice(diceCollection);
     var diceArray = diceCollection.find().toArray(function (err, diceArr) {
         if (err)
-            res.status(500).send({ error: "couldn't find the dice" });
+            res.status(500).send({ error: "Couldn't find the dice" });
         else {
             for (var i = 0; i < 6 ; i++) {
                 randIdx = (Math.floor(Math.random() * 6));
@@ -58,6 +58,7 @@ app.get('/', function (req, res, next) {
                 renderedDie += diceArr[randIdx];
             }
             //just renders the page with predefined dice
+            console.log("==Here are the dice to be rendered: ", renderedDice);
             res.status(200).render('gamePage', {renDice: renderedDice});
         }
     });
