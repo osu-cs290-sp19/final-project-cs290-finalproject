@@ -47,6 +47,8 @@ app.get('/', function (req, res, next) {
     var randIdx = 0;
     var renderedDie = [];
     var diceCollection = db.collection('dice');
+    if (diceCollection.length > 6)
+        diceCollection.remove();
     loadDice(diceCollection);
     var diceArray = diceCollection.find().toArray(function (err, diceArr) {
         if (err)
@@ -116,19 +118,19 @@ function loadDice(diceCollection) {
             },
             {
                 "value": "3",
-                "image": "dice/three.PNG"
+                "image": "https://imgur.com/a/yO6w2Du"
             },
             {
                 "value": "4",
-                "image": "dice/four.PNG"
+                "image": "https://imgur.com/a/Pc6EYZ6"
             },
             {
                 "value": "5",
-                "image": "dice/five.PNG"
+                "image": "https://imgur.com/a/fmM667F"
             },
             {
                 "value": "6",
-                "image": "public/dice/six.PNG"
+                "image": "https://imgur.com/a/M9BeygM"
             }
     ]);
 }
