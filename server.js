@@ -45,18 +45,16 @@ app.set('view engine', 'handlebars');
 //Serve up all files in public
 app.use(express.static('public'));
 
-//temporary data served from scores.json
-var scoreData = require("./scores");
-
 //Defines the page that is rendered designated by the path
 app.get('/', function (req, res, next) {
     res.status(200).render('gamePage');
-    var collection = db.collection('dice');
-    collection.find({}).toArray(function (err, dice) {
+    var diceCollection = db.collection('dice');
+    diceCollection.find({}).toArray(function (err, dice) {
         if (err)
             res.status(500).send({ error: "couldn't find the dice" });
         else {
             console.log(dice);
+            //render 6 random dice
         }
     });
 });
@@ -65,7 +63,17 @@ app.get('/rules', function (req, res, next) {
     res.status(200).render('rulesPage');
 });
 
+//makes a collection of the scores and generates score page based on scores
 app.get('/scores', function (req, res, next) {
+    var scoreCollection = db.collection('scores');
+    scoreCollection.find({}).toArray(function (err, scores) {
+        if (err)
+            res.status(500).send({ error: "couldn't retrieve the scores" });
+        else {
+            console.log(scores);
+            res.status(200).render('scoresPage', scores);   //scores might need to be an object
+        }
+    });
     res.status(200).render('scoresPage', { scores: scoreData });
 });
 

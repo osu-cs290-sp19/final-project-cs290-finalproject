@@ -4,11 +4,10 @@
     <div id="GameBoard">
         <button onclick="rollDice()" id="dealBTN">Roll</button>
 
-        <!--I was thinking this could be the spot for the reandom dice-->
+        <!--I was thinking this could be the spot for the random dice-->
         {{#each dice}}
         {{> dieImg}}
         {{/each}}
-
 
         <div id="playerHand" class="fan active-hand" data-fan='spacing: 0.2; width: 80; radius: 80; cards: AH, KH, QH, JH, QS'></div>
         <div id="CPU_LEFT" class="hand" data-hand="x: -50; cards: 2H, 3H, 4H, 5H, 6H"></div>
