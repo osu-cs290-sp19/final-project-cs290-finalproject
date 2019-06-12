@@ -44,23 +44,24 @@ app.use(express.static('public'));
 
 //Defines the page that is rendered designated by the path
 app.get('/', function (req, res, next) {
-    var randIdx = [];
+    var randIdx = 0;
+    var idxCheck = {};
     res.status(200).render('gamePage');
     var diceCollection = db.collection('dice');
-    //var rolledCollection = db.collection('rolled');
-    //if(diceCollection.length == 0)
-    loadDice(diceCollection);
+    var rolledCollection = db.collection('rolled');
+    if (diceCollection.length == 0) {
+        loadDice(diceCollection);
+    }
     var diceArray = diceCollection.find();
     diceArray.toArray(function (err, diceArr) {
         if (err)
             res.status(500).send({ error: "couldn't find the dice" });
         else {
             for (var i = 0; i < diceArr.length ; i++) {
-                randIdx[i] = (Math.floor(Math.random() * 6));
-                console.log("==Random val is = ", randIdx[i]);
-                console.log("==The dice is = ", diceArr[i]);
-                //rolledCollection.insertOne(diceCollection[randIdx]);
-                //console.log("==new dice is: ", rolledCollection[i]);
+                randIdx = (Math.floor(Math.random() * 6));
+                console.log("==Random val is = ", randIdx);
+                rolledCollection.insertOne(diceCollection.find({ value: randIdx }));
+                console.log("==random dice is: ", rolledCollection[i]);
             }
         }
     });
@@ -90,8 +91,7 @@ app.get('*', function (req, res, next) {
 //this will manually load the dice into the collection
 function loadDice(diceCollection) {
     //value is set to value-1 for index
-    diceCollection.insertMany([
-        {
+    diceCollection.insertMany({
             "one": {
                 "value": "0",
                 "image": "/public/dice/one.PNG"
@@ -116,8 +116,7 @@ function loadDice(diceCollection) {
                 "value": "5",
                 "image": "/public/dice/six.PNG"
             }
-        }
-    ]);
+        });
 }
 
 //mongo connection is created and server is started here
