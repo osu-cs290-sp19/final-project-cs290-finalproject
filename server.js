@@ -48,8 +48,7 @@ app.get('/', function (req, res, next) {
     var renderedDie = [];
     var diceCollection = db.collection('dice');
     var diceArray = diceCollection.find();
-    if (diceCollection.length > 6)
-        diceCollection.remove();
+    diceArray.drop();
     loadDice(diceCollection);
     diceArray = diceCollection.find().toArray(function (err, diceArr) {
         if (err)
