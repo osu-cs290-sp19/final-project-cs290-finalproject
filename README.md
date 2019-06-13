@@ -18,7 +18,7 @@
 * 	ETA: June 8, 2019
 - [X] Game logic completed
 * 	ETA: June 9, 2019
-- [ ] Database communication implementation
+- [X] Database communication implementation
 * 	ETA: June 13, 2019
-- [ ] Project finished
+- [X] Project finished
 * 	ETA: June 14, 2019

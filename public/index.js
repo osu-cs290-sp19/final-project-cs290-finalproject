@@ -1,5 +1,6 @@
-var roundScore = 0;
-var round = 1;
+var roundScore  = 0;
+var bestScore   = 0;
+var round       = 1;
 
 //Code for dice game
 window.addEventListener('DOMContentLoaded', function () {
@@ -31,8 +32,10 @@ function handleDiceRoll() {
         document.getElementById(curDie).style.display = "inline-block";
         document.getElementById("finalScoreLabel").innerHTML = "You Scored: " + roundScore;
         document.getElementById("roundLabel").innerHTML = "Current Round: " + round + "  <>  ";
+        document.getElementById("bestScoreLabel").innerHTML = "Top Scored: " + bestScore;
         roundScore += rolls[i];
     }
+    if (roundScore > bestScore) bestScore = roundScore; //update best score
     round++;
 }
 
