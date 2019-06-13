@@ -45,6 +45,7 @@ app.use(express.static('public'));
 //Defines the page that is rendered designated by the path
 app.get('/', function (req, res, next) {
     var randIdx = 0;
+    var finalScore = 0;
     var renderedDie = [];
     var diceCollection = db.collection('dice');
     diceCollection.drop();
@@ -57,20 +58,14 @@ app.get('/', function (req, res, next) {
             for (var i = 0; i < diceArr.length ; i++) {
                 randIdx = (Math.floor(Math.random() * 6));
                 renderedDie.push(diceArr[randIdx]);
+                finalScore += randIdx;
             }
+            finalScore += 6;
             res.status(200).render('gamePage', { renDice: renderedDie });
-            calcScore({renDice: renderedDie});
+            console.log("==Final Score is: ", finalScore);
         }
     });
 });
-
-function calcScore(dice) {
-    var finalScore = 0;
-    for (var i = 0; i < dice.length; i++) {
-        finalScore += dice[i].value;
-    }
-    console.log("Final score is: ", finalScore);
-}
 
 //render rules page
 app.get('/rules', function (req, res, next) {
