@@ -18,7 +18,8 @@ function handleDiceRoll() {
     roundScore = 0;
 
     for (var i = 0; i < 5; i++) {
-        lastRolls[i] = rolls[i];
+        if (round >= 2)
+            lastRolls[i] = rolls[i];
         rolls[i] = getRandomInt(5) + 1;                                      //returns a random int between 0 and 5, +1 to move range to 1
         var curDie = "dice" + (i + 1);
         document.getElementById(curDie).src = "./dice/" + rolls[i] + ".PNG"; //give the current diceID the proper source
