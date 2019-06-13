@@ -1,13 +1,10 @@
-<script src="/score.js" charset="utf-8" defer></script>
-<link rel="stylesheet" href="scorePage.css" media="screen" />
-
 <div class="scoretab">
 <h2 class="scoreTitle">Top Scores</h2>
-    <ol class="scoreList">
+    <table class="scoreTable">
         <!--template to fill in name and score-->
         {{#each scores}}
             {{> newScore}}
         {{/each}}
-    </ol>
+    </table>
     <p style="text-align: center;">-- Higher is better --</p>
 </div>

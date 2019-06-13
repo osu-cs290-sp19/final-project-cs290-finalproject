@@ -24,9 +24,6 @@
 
 header {
     background-color: #ef393a;   /* I want to replace this ugly color with a nice background card themed or something */
-    background-image: url("./cards/Red_Back.svg");
-    /*filter: blur(4px);        Dissabling blur although it looks cool, the way I am working the background image, this filter blurs all text too.
-        -webkit-filter: blur(4px) */
     background-repeat: repeat;
     padding: 0;
 }

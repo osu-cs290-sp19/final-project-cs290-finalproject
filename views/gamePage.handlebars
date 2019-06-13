@@ -1,23 +1,29 @@
-<script src="index.js" charset="utf-8" defer></script>
 <main>
     <h1 style="text-align: center; color: white">Lets Roll Some Dice!</h1>
     <div id="GameBoard">
-        <button id="rollBTN">Roll</button>
-
-        <img id="dice1" class="dice inactive"/>
-        <img id="dice2" class="dice inactive"/>
-        <img id="dice3" class="dice inactive"/>
-        <img id="dice4" class="dice inactive"/>
-        <img id="dice5" class="dice inactive"/>
-
+        <button onclick="handleDiceRoll()" id="rollBTN">Roll</button>
+        <div class="diceBoard">
+            <div class="infoBoard">
+                <h4 id="roundLabel">Current Round: </h4>
+                <h4 id="finalScoreLabel">You Scored: </h4>
+                <h4 id="bestScoreLabel">Top Scored: </h4>
+            </div>
+            <img id="dice1" class="dice inactive"/>
+            <img id="dice2" class="dice inactive"/>
+            <img id="dice3" class="dice inactive"/>
+            <img id="dice4" class="dice inactive"/>
+            <img id="dice5" class="dice inactive"/>
+                <br><br><br>
+            <img id="lastdice1" class="dice inactive lastRound"/>
+            <img id="lastdice2" class="dice inactive lastRound"/>
+            <img id="lastdice3" class="dice inactive lastRound"/>
+            <img id="lastdice4" class="dice inactive lastRound"/>
+            <img id="lastdice5" class="dice inactive lastRound"/>
+        </div>
+        <br>
         <!--I was thinking this could be the spot for the random dice-->
         {{#each renDice}}
         {{> dieImg}}
         {{/each}}
-
     </div>
-
 </main>
-<footer>
-    <p>This game is still a WIP</p>
-</footer>

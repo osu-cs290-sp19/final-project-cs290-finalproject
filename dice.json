@@ -1,26 +1,26 @@
 {
   "one": {
     "value": "1",
-    "image": "/public/dice/one.PNG"
+    "image": "/public/dice/1.PNG"
   },
   "two": {
     "value": "2",
-    "image": "/public/dice/two.PNG"
+    "image": "/public/dice/2.PNG"
   },
   "three": {
     "value": "3",
-    "image": "/public/dice/three.PNG"
+    "image": "/public/dice/3.PNG"
   },
   "four": {
     "value": "4",
-    "image": "/public/dice/four.PNG"
+    "image": "/public/dice/4.PNG"
   },
   "five": {
     "value": "5",
-    "image": "/public/dice/five.PNG"
+    "image": "/public/dice/5.PNG"
   },
   "six": {
     "value": "6",
-    "image": "/public/dice/six.PNG"
+    "image": "/public/dice/6.PNG"
   }
 }

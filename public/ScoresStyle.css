@@ -1,0 +1,55 @@
+.scoreTitle {
+    margin-top: 0;
+}
+
+.score:hover {
+    background-color: #50DD5D;
+    border: 10px;
+}
+
+#deleteButton {
+    padding: 2px;
+    margin: 4px;
+    background-color: white;
+    border-color: black;
+    border-radius: 15px;
+}
+
+#deleteButton:hover {
+    cursor: pointer;
+    background-color: red;
+}
+
+.scoretab {
+    background-color: green;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    border: solid 6px #785120;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 2px solid black;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+}
+
+tr:nth-child(1) {
+    background-color: #969696
+    font-weight: bold;
+}

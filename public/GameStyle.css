@@ -4,19 +4,39 @@ a img {
 	right: 0;
 	border: 0;
 }
+
 button {
 	height: 30px;
 	width: 100px;
 	margin: 8px auto;
 }
+
+/* Each dice image starts off inicially with the
+	.inactive class name to keep things clean
+	before roll is clicked						*/
 img.inactive {
 	display: none;
 }
 
 .dice {
 	width: 50px;
-	height: 50px
+	height: 50px;
 	display: inline-block;
+	margin: auto;
+}
+
+.lastRound {
+	width: 25px !important;
+	height: 25px !important;
+}
+
+.diceBoard {
+	background-color: black;
+	width: 300px;
+	height: 180px;
+	border-radius: 20px;
+	padding: 10px;
+	margin: auto;
 }
 
 #GameBoard {
@@ -40,6 +60,13 @@ img.inactive {
 	position: absolute;
 	left: 310px;
 	top: 170px;
+}
+
+#finalScoreLabel, #roundLabel, #bestScoreLabel {
+	color: white;
+	display: inline-block;
+	margin: 0;
+	text-align: left;
 }
 
 footer {

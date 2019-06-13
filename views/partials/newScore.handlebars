@@ -1,15 +1,9 @@
-<li>
+<tr>
     <div class="score">
-        <h2 class="scoreName">
-            {{name}}: {{score}}
+        <th>{{name}}</th>
+        <th>{{score}}</th>
+        <th>
             <button id="deleteButton" onclick="deleteScore()">DELETE</button>
-        </h2>
+        </th>
     </div>
-</li>
-
-<script>
-    function deleteScore() {
-        //send some kind of request to access db
-        console.log("Delete this score");
-    }
-</script>
+</tr>
