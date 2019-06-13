@@ -57,13 +57,20 @@ app.get('/', function (req, res, next) {
             for (var i = 0; i < diceArr.length ; i++) {
                 randIdx = (Math.floor(Math.random() * 6));
                 renderedDie.push(diceArr[randIdx]);
-                console.log(diceArr[i]);
             }
-            console.log("==Here are the dice to be rendered: ", renderedDie);
-            res.status(200).render('gamePage', {renDice: renderedDie});
+            res.status(200).render('gamePage', { renDice: renderedDie });
+            calcScore({renDice: renderedDie});
         }
     });
 });
+
+function calcScore(dice) {
+    var finalScore = 0;
+    for (var i = 0; i < dice.length; i++) {
+        finalScore += dice[i].value;
+    }
+    console.log("Final score is: ", finalScore);
+}
 
 //render rules page
 app.get('/rules', function (req, res, next) {
@@ -83,22 +90,22 @@ app.get('/scores', function (req, res, next) {
     });
 });
 
-//adds the final score
-app.post('/scores/addScore', function (req, res, next) {
-    if (req.body && req.body.name) {
-        var scoreCollection = db.collection('scores');
-        var finalScore = {
-            name: "21",
-            score: req.body.score
-        };
-        scoreCollection.insertOne({
-            $push: {scores: finalScore}
-        });
-        console.log("==Added score is: ", finalScore);
-    }
-    else
-        next();
-});
+////adds the final score
+//app.post('/scores/addScore', function (req, res, next) {
+//    if (req.body && req.body.name) {
+//        var scoreCollection = db.collection('scores');
+//        var finalScore = {
+//            name: "21",
+//            score: req.body.score
+//        };
+//        scoreCollection.insertOne({
+//            $push: {scores: finalScore}
+//        });
+//        console.log("==Added score is: ", finalScore);
+//    }
+//    else
+//        next();
+//});
 
 app.get('*', function (req, res, next) {
     res.status(404).render('404Page');
