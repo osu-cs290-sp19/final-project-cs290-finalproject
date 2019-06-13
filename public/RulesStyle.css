@@ -1,0 +1,43 @@
+/**
+ *
+ * RULES PAGE CSS
+ *
+**/
+.RuleLibrary {
+    text-align: center;
+}
+
+.RuleBook {
+    margin: auto;
+}
+
+.RuleBlock {
+    border-radius: 20px;
+    background-color: green;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-table;
+    position: static;
+    max-width: 400px;
+    width: 300px;
+    height: 500px;
+    left: 50px;
+    top: 150px;
+
+}
+
+.RuleBlock h2 {
+    background-color: #785120;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.RuleBlock h4 {
+    font-weight: bold;
+    color: #60B41D;
+}

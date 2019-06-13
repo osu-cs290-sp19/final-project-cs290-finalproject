@@ -5,49 +5,55 @@ a img {
 	border: 0;
 }
 button {
-	height:30px;
-	width:100px;
-	margin:8px auto;
+	height: 30px;
+	width: 100px;
+	margin: 8px auto;
 }
-img.preload {
-	display:none;
+img.inactive {
+	display: none;
+}
+
+.dice {
+	width: 50px;
+	height: 50px
+	display: inline-block;
 }
 
 #GameBoard {
-	text-align:center;
+	text-align: center;
     background-color: green;
     margin: 0 auto;
     margin-top: 10px;
-    height:400px;
-	width:600px;
-    border:solid 6px #785120;
-	border-radius:8px;
-	-webkit-border-radius:8px;
-	-moz-border-radius:8px;
-	-ms-border-radius:8px;
-	-o-border-radius:8px;
-	box-shadow:#111 1px 1px 2px;
+    height: 400px;
+	width: 600px;
+    border: solid 6px #785120;
+	border-radius: 8px;
+	-webkit-border-radius :8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	box-shadow: #111 1px 1px 2px;
 }
 
 #deal {
-	margin:auto;
+	margin: auto;
 	position: absolute;
-	left:310px;
-	top:170px;
+	left: 310px;
+	top: 170px;
 }
 
 footer {
 	font-size : 12px;
-	color:grey;
-	margin:10px;
+	color: grey;
+	margin: 10px;
     text-align: center;
     color: white;
 }
 
 footer a, footer a:visited{
-	color:grey;
+	color: grey;
 }
 
 footer a:hover {
-	color:black;
+	color: black;
 }
